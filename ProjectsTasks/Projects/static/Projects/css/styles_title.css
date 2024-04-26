@@ -1,0 +1,133 @@
+/* ------------------------------------------------------------------------- */
+/* ---------------------------- ESTILOS GENERAL ---------------------------- */
+/* ------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header-container {
+  /* Estilos para el encabezado */
+  background-color: #1d292f;
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 20px;
+}
+nav {
+  /* Estilos para la barra de navegación */
+  background-color: #374b53;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 4px;
+  display: flex; /* Utilizar flexbox para alinear elementos */
+  justify-content: space-between; /* Alinear los elementos horizontalmente */
+  align-items: center; /* Centrar verticalmente los elementos */
+}
+.left-menu {
+  /*alinear el menú izquierda */
+  display: flex;
+}
+.right-menu {
+  /*alinear el menú derecha */
+  display: flex;
+}
+
+/* ---------------------------------------------------------------------- */
+/* ---------------------------- ESTILOS HOME ---------------------------- */
+/* ---------------------------------------------------------------------- */
+
+/* Estilos para el ul - li */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+nav li {
+  margin-left: 20px;
+  cursor: pointer;
+}
+nav a {
+  color: #fff;
+  text-decoration: none; /* Eliminar el subrayado */
+}
+nav li:hover a {
+  color: yellow;
+  font-size: 1.01em; /* Incrementar el tamaño del texto */
+}
+
+/* Estilos para el dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #374b53;
+  min-width: 120px; /* Ancho mínimo ajustado */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px; /* Bordes redondeados */
+  animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
+}
+.left-menu .dropdown {
+  /* Añadir margen entre los elementos del menú izquierdo */
+  margin-right: 12px; /* Puedes ajustar este valor según tu preferencia */
+}
+.dropdown-content a {
+  color: #fff;
+  padding: 8px 12px; /* Padding ajustado */
+  font-size: 14px; /* Tamaño de fuente ajustado */
+  text-decoration: none;
+  display: block;
+  border-radius: 2px; /* Bordes redondeados */
+}
+.dropdown-content a:hover {
+  background-color: #97a836; /* Color más claro al pasar el mouse */
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn {
+  /* Estilo para el botón del menú desplegable - TITULOS */
+  background-color: #374b53;
+  color: #fff;
+  padding: 10px; /* Padding ajustado */
+  font-size: 15px; /* Tamaño de fuente ajustado */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease-in-out; /* Transición de color */
+  position: relative; /* Posición relativa */
+}
+.dropbtn::after {
+  /* Flecha al lado del botón */
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px; /* Distancia de la flecha al botón */
+  transform: translateY(-50%);
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.3s ease-in-out;
+}
+.dropdown:hover .dropbtn::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+.dropbtn:hover {
+  background-color: #555; /* Color más oscuro al pasar el mouse */
+}
+@keyframes fadeIn {
+  /* Animación de aparición */
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

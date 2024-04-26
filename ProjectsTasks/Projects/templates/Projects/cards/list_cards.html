@@ -1,0 +1,25 @@
+{% extends 'Projects/base.html' %} {% block title %}Projects Tasks{% endblock %}
+{% block h1%}
+<h1>Bienvenidos a Proyects Tasks</h1>
+{% endblock%} {% block nav %}
+<nav>
+  <div class="dropdown">
+    <button class="dropbtn">VISTA</button>
+    <div class="dropdown-content">
+      <a href="/Projects/list">Total Proyectos</a>
+      <a href="/admin/">Admin</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">TARJETAS</button>
+    <div class="dropdown-content">
+      <a href="/Projects/create/cards/">Crear Proyecto</a>
+      <a href="/Projects/create/lider/">Crear Lider</a>
+      <a href="/Projects/create/sponsor/">Crear Sponsor</a>
+      <a href="/Projects/buscar/sponsor/">Buscar Sponsor</a>
+    </div>
+  </div>
+</nav>
+{% endblock%} {% block content %}
+<h3>Bienvenidos a la web de Reservas!</h3>
+{% endblock content %}

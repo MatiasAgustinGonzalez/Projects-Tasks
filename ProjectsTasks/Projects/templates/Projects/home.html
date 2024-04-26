@@ -1,0 +1,23 @@
+{% extends 'Projects/base.html' %} {% load static %}{% block title %}Projects
+Tasks{% endblock %} {% block h1%}
+<h1>Bienvenidos a Proyects Tasks</h1>
+{% endblock%} {% block nav %}
+<div class="left-menu">
+  <div class="dropdown">
+    <button class="dropbtn">APP's</button>
+    <div class="dropdown-content">
+      <a href="/Projects/create/cards/">Proyectos</a>
+    </div>
+  </div>
+</div>
+<div class="right-menu">
+  <ul>
+    <li><a href="">LOGOUT</a></li>
+  </ul>
+  <ul>
+    <li><a href="">USUARIO</a></li>
+  </ul>
+</div>
+{% endblock%} {% block content %}
+<h3>Bienvenidos a la web de Reservas!</h3>
+{% endblock content %}

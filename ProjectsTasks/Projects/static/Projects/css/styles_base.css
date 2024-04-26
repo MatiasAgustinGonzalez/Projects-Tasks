@@ -1,0 +1,89 @@
+/* Estilos para la barra de navegación */
+nav {
+  background-color: #374b53;
+  color: #fff;
+  padding: 4px;
+  display: flex; /* Utilizar flexbox para alinear elementos */
+  justify-content: space-between; /* Alinear los elementos horizontalmente */
+  align-items: center; /* Centrar verticalmente los elementos */
+}
+
+/* Estilo para el botón del menú desplegable - TITULOS */
+.dropbtn {
+  background-color: #374b53;
+  color: #fff;
+  padding: 10px; /* Padding ajustado */
+  font-size: 15px; /* Tamaño de fuente ajustado */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease-in-out; /* Transición de color */
+  position: relative; /* Posición relativa */
+}
+
+/* Flecha al lado del botón */
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2px; /* Distancia de la flecha al botón */
+  transform: translateY(-50%);
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropbtn::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.dropbtn:hover {
+  background-color: #555; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos para el menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #374b53;
+  min-width: 120px; /* Ancho mínimo ajustado */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px; /* Bordes redondeados */
+  animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 8px 12px; /* Padding ajustado */
+  font-size: 14px; /* Tamaño de fuente ajustado */
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #97a836; /* Color más claro al pasar el mouse */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
