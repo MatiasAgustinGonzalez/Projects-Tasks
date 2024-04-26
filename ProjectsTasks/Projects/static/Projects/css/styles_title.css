@@ -65,19 +65,19 @@ nav li:hover a {
   display: none;
   position: absolute;
   background-color: #374b53;
-  min-width: 120px; /* Ancho mínimo ajustado */
+  min-width: 100px; /* Ancho minimo contenedor interior */
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 5px; /* Bordes redondeados */
   animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
 }
 .left-menu .dropdown {
-  /* Añadir margen entre los elementos del menú izquierdo */
-  margin-right: 12px; /* Puedes ajustar este valor según tu preferencia */
+  /* Separacion lateral entre los dropdown */
+  margin-right: 12px;
 }
 .dropdown-content a {
   color: #fff;
-  padding: 8px 12px; /* Padding ajustado */
+  padding: 8px 12px;
   font-size: 14px; /* Tamaño de fuente ajustado */
   text-decoration: none;
   display: block;
@@ -93,7 +93,7 @@ nav li:hover a {
   /* Estilo para el botón del menú desplegable - TITULOS */
   background-color: #374b53;
   color: #fff;
-  padding: 10px; /* Padding ajustado */
+  padding: 10px;
   font-size: 15px; /* Tamaño de fuente ajustado */
   border: none;
   cursor: pointer;
