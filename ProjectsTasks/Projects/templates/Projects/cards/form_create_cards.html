@@ -1,0 +1,24 @@
+{% extends 'Projects/base.html' %} {% load static %}{% block title %}Projects
+Task - Creación{%endblock %} {%block h1%}
+<h1>Creación de Proyecto</h1>
+{% endblock%} {% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_form_create_cards.css' %} "
+/>
+<div class="right-menu">
+  <ul>
+    <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
+  </ul>
+  <ul>
+    <li><a href="">USUARIO</a></li>
+  </ul>
+</div>
+{% endblock%}{% block content %}
+<div class="form-container">
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+{% endblock %}

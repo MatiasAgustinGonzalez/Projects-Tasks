@@ -1,12 +1,12 @@
-{% extends 'Projects/base.html' %} {% load static %}{% block title %}Projects
-Tasks{% endblock %} {% block h1%}
+{% extends 'Projects/base.html' %}{% block title %}Projects Tasks{% endblock %}
+{% block h1%}
 <h1>Bienvenidos a Proyects Tasks</h1>
 {% endblock%} {% block nav %}
 <div class="left-menu">
   <div class="dropdown">
     <button class="dropbtn">APP's</button>
     <div class="dropdown-content">
-      <a href="/Projects/cards-list/">Proyectos</a>
+      <a href="{% url 'list_cards' %}">Proyectos</a>
       <a href="/admin/">Administrador</a>
     </div>
   </div>

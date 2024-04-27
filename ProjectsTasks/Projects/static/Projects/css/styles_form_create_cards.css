@@ -1,0 +1,41 @@
+/* Estilos para el contenedor del formulario */
+.form-container {
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para los campos del formulario */
+form input[type="text"],
+form textarea,
+form select {
+  margin-bottom: 20px; /* Agrega espacio entre los campos */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de guardar */
+form button[type="submit"] {
+  margin-top: 20px; /* Agrega espacio entre el último campo y el botón */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón de guardar al pasar el mouse */
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}

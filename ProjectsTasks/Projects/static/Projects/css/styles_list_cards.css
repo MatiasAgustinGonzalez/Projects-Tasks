@@ -1,0 +1,106 @@
+* {
+  font-family: sans-serif;
+}
+
+/* Estilos para las cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 35px;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #9bbec5;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ajuste para tarjetas con máximo de 4 por fila */
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 15px;
+  color: #fff;
+  padding: 12px 12px;
+  border-radius: 5px;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Estilos para el hover del lider y sponsor */
+.tag:hover {
+  color: yellow;
+  font-size: 1.01em; /* Incrementar el tamaño del texto */
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #073345;
+}
+
+.card p {
+  margin-bottom: 20px;
+  color: #073345;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.card h3 {
+  /* Cambiar color del h3 según el estado */
+  color: rgb(
+    128,
+    26,
+    0
+  ); /* Por defecto, en caso de que no se especifique el estado */
+}
+
+/* Cambiar color según el estado */
+.card h3[data-estado="En Curso"] {
+  color: blue;
+}
+
+.card h3[data-estado="Planificado"] {
+  color: rgba(167, 25, 202, 0.726);
+}
+
+.card h3[data-estado="Finalizado"] {
+  color: rgba(35, 170, 7, 0.76);
+}
+
+/* Estilo para cuando el cursor está sobre la tarjeta */
+.card:hover {
+  transform: scale(1.08);
+}
+
+.btn-detail {
+  /*   #background-color: #007bff; */
+  color: #fff;
+  padding: 3px 4px; /* Ajustar el tamaño del botón */
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Estilos para el hover del boton Ver Detalle */
+.btn-detail:hover {
+  color: yellow;
+  font-size: 1.01em; /* Incrementar el tamaño del texto */
+}

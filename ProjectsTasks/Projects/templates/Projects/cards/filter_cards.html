@@ -1,5 +1,5 @@
 {% extends 'Projects/base.html' %} {% load static %} {% block title %}Projects
-Task - Listado{%endblock %} {%block h1%}
+Task - Filtro {%endblock %} {%block h1%}
 <h1>Listado de Proyectos</h1>
 {% endblock%} {% block nav %}
 <link
@@ -7,22 +7,9 @@ Task - Listado{%endblock %} {%block h1%}
   href="{% static 'Projects/css/styles_list_cards.css' %} "
 />
 <div class="left-menu">
-  <div class="dropdown">
-    <button class="dropbtn">VISTA</button>
-    <div class="dropdown-content">
-      <a href="/Projects/">Principal</a>
-      <a href="/admin/">Admin</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">TARJETAS</button>
-    <div class="dropdown-content">
-      <a href="">Crear Lider</a>
-      <a href="">Crear Sponsor</a>
-      <a href="">Buscar Sponsor</a>
-      <a href="{% url 'create_cards' %}">Crear Proyecto</a>
-    </div>
-  </div>
+  <ul>
+    <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
+  </ul>
 </div>
 <div class="right-menu">
   <ul>
@@ -34,15 +21,11 @@ Task - Listado{%endblock %} {%block h1%}
 </div>
 {% endblock%} {% block content %}
 <div class="card-container">
-  {% for tarjeta in TARJETAS_LIST %}
+  {% for tarjeta in TARJETAS_FILTER %}
   <div class="card">
     <div class="card-header">
-      <a href="{% url 'filter_lider' tarjeta.lider.nombre %}" class="tag"
-        >{{ tarjeta.lider }}</a
-      >
-      <a href="{% url 'filter_sponsor' tarjeta.sponsor.nombre %}" class="tag"
-        >{{ tarjeta.sponsor }}</a
-      >
+      <span class="tag">{{ tarjeta.lider }}</span>
+      <span class="tag">{{ tarjeta.sponsor }}</span>
     </div>
     <h2>{{ tarjeta.titulo }}</h2>
     <p>{{ tarjeta.descripcion }}</p>
