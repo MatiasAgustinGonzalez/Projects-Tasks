@@ -8,19 +8,27 @@ Task - Listado{%endblock %} {%block h1%}
 />
 <div class="left-menu">
   <div class="dropdown">
-    <button class="dropbtn">VISTA</button>
+    <button class="dropbtn">GENERAL</button>
     <div class="dropdown-content">
       <a href="/Projects/">Principal</a>
       <a href="/admin/">Admin</a>
     </div>
   </div>
   <div class="dropdown">
-    <button class="dropbtn">TARJETAS</button>
+    <button class="dropbtn">ACCION</button>
     <div class="dropdown-content">
-      <a href="">Crear Lider</a>
-      <a href="">Crear Sponsor</a>
-      <a href="">Buscar Sponsor</a>
+      <a href="{% url 'create_lider' %}">Crear Lider</a>
+      <a href="{% url 'create_sponsor' %}">Crear Sponsor</a>
       <a href="{% url 'create_cards' %}">Crear Proyecto</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">VISUALIZACION</button>
+    <div class="dropdown-content">
+      <a href="">Listado Lider</a>
+      <a href="">Listado Sponsor</a>
+      <a href="">Buscar Sponsor</a>
+      <a href="">Buscar Lider</a>
     </div>
   </div>
 </div>
@@ -48,7 +56,9 @@ Task - Listado{%endblock %} {%block h1%}
     <p>{{ tarjeta.descripcion }}</p>
     <div class="card-footer">
       <h3 data-estado="{{ tarjeta.estado }}">{{ tarjeta.estado }}</h3>
-      <a href="" class="btn-detail">Ver Detalle</a>
+      <a href="{% url 'detail_cards' tarjeta.id %}" class="btn-detail"
+        >Ver Detalle</a
+      >
     </div>
   </div>
   {% empty %}

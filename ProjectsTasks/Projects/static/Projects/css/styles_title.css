@@ -42,6 +42,7 @@ nav ul {
   list-style-type: none;
   display: flex;
   justify-content: flex-end;
+  font-size: 13px;
 }
 nav li {
   margin-left: 20px;
@@ -94,7 +95,7 @@ nav li:hover a {
   background-color: #374b53;
   color: #fff;
   padding: 10px;
-  font-size: 15px; /* Tamaño de fuente ajustado */
+  font-size: 13px; /* Tamaño de titulo */
   border: none;
   cursor: pointer;
   border-radius: 5px; /* Bordes redondeados */
@@ -108,7 +109,7 @@ nav li:hover a {
   top: 50%;
   right: -10px; /* Distancia de la flecha al botón */
   transform: translateY(-50%);
-  border: solid black;
+  border: solid rgb(131, 139, 50);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
