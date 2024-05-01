@@ -10,6 +10,8 @@ from django.views.generic import (
 )
 from .models import Lider, Sponsor, Tarjeta
 from .forms import TarjetaSearchForm
+from django.contrib.auth import login, logout
+from django.contrib.auth.forms import AuthenticationForm
 
 
 def home_view(request):
@@ -167,3 +169,33 @@ class SponsorDeleteView(DeleteView):
     success_url = reverse_lazy("list_sponsor")
 
 
+# -----------------------------------------------------------------------------
+# --------------------------   LOGIN LOGOUT   ---------------------------------
+# -----------------------------------------------------------------------------
+
+#--------------------------------
+#             LOGIN
+#--------------------------------
+
+def user_login_view(request):
+    if request.method == "GET":
+        form = AuthenticationForm()
+    elif request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+
+        if form.is_valid():
+            user = form.user_cache
+            if user is not None:
+                login(request, user)
+                return redirect("home")
+
+    return render(request, "Projects/profile/login.html", {"FORM_LOGIN": form})
+
+
+#--------------------------------
+#             LOGOUT
+#--------------------------------
+
+def user_logout_view(request):
+    logout(request)
+    return redirect("login")

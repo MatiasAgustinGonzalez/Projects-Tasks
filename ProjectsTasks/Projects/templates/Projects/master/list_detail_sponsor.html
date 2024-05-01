@@ -6,25 +6,17 @@ Task - Detalle {% endblock %} {% block h1 %}
   rel="stylesheet"
   href="{% static 'Projects/css/styles_list_lider_sponsor.css' %}"
 />
-<div class="left-menu">
-  <ul>
-    <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
-  </ul>
-</div>
-<div class="right-menu">
-  <ul>
-    <li><a href="">LOGOUT</a></li>
-  </ul>
-  <ul>
-    <li><a href="">USUARIO</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
+</ul>
 {% endblock %} {% block content %}
 <section class="py-5">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h2 class="mb-0">Sponsor</h2>
-      <a href="{% url 'create_sponsor' %}" class="btn btn-success">Crear Sponsor</a>
+      <a href="{% url 'create_sponsor' %}" class="btn btn-success"
+        >Crear Sponsor</a
+      >
     </div>
     <table class="table">
       <thead>
@@ -40,7 +32,11 @@ Task - Detalle {% endblock %} {% block h1 %}
           <th scope="row">{{ forloop.counter }}</th>
           <td>{{ sponsor.nombre }}</td>
           <td>
-            <a href="{% url 'update_sponsor' sponsor.id %}" class="btn btn-primary btn-sm">Editar</a>
+            <a
+              href="{% url 'update_sponsor' sponsor.id %}"
+              class="btn btn-primary btn-sm"
+              >Editar</a
+            >
             <a
               href="{% url 'delete_sponsor' sponsor.id %}"
               class="btn btn-primary btn-sm btn-danger"

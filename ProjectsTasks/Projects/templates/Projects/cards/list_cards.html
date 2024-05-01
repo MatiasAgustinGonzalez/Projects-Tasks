@@ -6,39 +6,29 @@ Task - Listado{%endblock %} {%block h1%}
   rel="stylesheet"
   href="{% static 'Projects/css/styles_list_cards.css' %} "
 />
-<div class="left-menu">
-  <div class="dropdown">
-    <button class="dropbtn">GENERAL</button>
-    <div class="dropdown-content">
-      <a href="/Projects/">Principal</a>
-      <a href="/admin/">Admin</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">CREACION</button>
-    <div class="dropdown-content">
-      <a href="{% url 'create_lider' %}">Crear Lider</a>
-      <a href="{% url 'create_sponsor' %}">Crear Sponsor</a>
-      <a href="{% url 'create_cards' %}">Crear Proyecto</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">VISUALIZACION</button>
-    <div class="dropdown-content">
-      <a href="{% url 'list_cards' %}">Listado Proyectos</a>
-      <a href="{% url 'list_lider' %}">Listado Lider</a>
-      <a href="{% url 'list_sponsor' %}">Listado Sponsor</a>
-      <a href="{% url 'search_cards' %}">Buscar Proyectos</a>
-    </div>
+<div class="dropdown">
+  <button class="dropbtn">GENERAL</button>
+  <div class="dropdown-content">
+    <a href="/Projects/">Principal</a>
+    <a href="/admin/">Admin</a>
   </div>
 </div>
-<div class="right-menu">
-  <ul>
-    <li><a href="">LOGOUT</a></li>
-  </ul>
-  <ul>
-    <li><a href="">USUARIO</a></li>
-  </ul>
+<div class="dropdown">
+  <button class="dropbtn">CREACION</button>
+  <div class="dropdown-content">
+    <a href="{% url 'create_lider' %}">Crear Lider</a>
+    <a href="{% url 'create_sponsor' %}">Crear Sponsor</a>
+    <a href="{% url 'create_cards' %}">Crear Proyecto</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">VISUALIZACION</button>
+  <div class="dropdown-content">
+    <a href="{% url 'list_cards' %}">Listado Proyectos</a>
+    <a href="{% url 'list_lider' %}">Listado Lider</a>
+    <a href="{% url 'list_sponsor' %}">Listado Sponsor</a>
+    <a href="{% url 'search_cards' %}">Buscar Proyectos</a>
+  </div>
 </div>
 {% endblock%} {% block content %}
 <div class="card-container">

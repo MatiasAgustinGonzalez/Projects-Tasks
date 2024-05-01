@@ -6,21 +6,11 @@ Task - Editar {% endblock %} {% block h1 %}
   rel="stylesheet"
   href="{% static 'Projects/css/styles_form_create.css' %}"
 />
-<div class="left-menu">
-  <div class="dropdown">
-    <button class="dropbtn">ACCION</button>
-    <div class="dropdown-content">
-      <a href="{% url 'list_lider' %}">Regresar</a>
-    </div>
+<div class="dropdown">
+  <button class="dropbtn">ACCION</button>
+  <div class="dropdown-content">
+    <a href="{% url 'list_lider' %}">Regresar</a>
   </div>
-</div>
-<div class="right-menu">
-  <ul>
-    <li><a href="">LOGOUT</a></li>
-  </ul>
-  <ul>
-    <li><a href="">USUARIO</a></li>
-  </ul>
 </div>
 {% endblock %} {% block content %}
 <div class="form-container">

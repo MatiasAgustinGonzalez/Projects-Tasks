@@ -6,16 +6,9 @@ Task - Creación{%endblock %} {%block h1%}
   rel="stylesheet"
   href="{% static 'Projects/css/styles_form_create.css' %} "
 />
-<div class="left-menu">
-  <ul>
-    <li><a href="{% url 'list_lider' %}">REGRESAR</a></li>
-  </ul>
-</div>
-<div class="right-menu">
-  <ul>
-    <li><a href="">USUARIO</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="{% url 'list_lider' %}">REGRESAR</a></li>
+</ul>
 {% endblock%}{% block content %}
 <div class="form-container">
   <form method="post">

@@ -17,6 +17,8 @@ from .views import(
     TarjetaDeleteView,
     LiderDeleteView,
     SponsorDeleteView,
+    user_login_view,
+    user_logout_view,
 )
 
 urlpatterns = [
@@ -37,4 +39,6 @@ urlpatterns = [
     path("cards-delete/<int:pk>/", TarjetaDeleteView.as_view(), name="delete_cards"),
     path("lider-delete/<int:pk>/", LiderDeleteView.as_view(), name="delete_lider"),
     path("sponsor-delete/<int:pk>/", SponsorDeleteView.as_view(), name="delete_sponsor"),
+    path("login/", user_login_view, name="login"),
+    path("logout/", user_logout_view, name="logout"),
 ]

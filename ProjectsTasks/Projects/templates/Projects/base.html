@@ -11,7 +11,29 @@
     <header>
       <div class="header-container">{% block h1 %} {% endblock h1 %}</div>
     </header>
-    <nav>{% block nav %} {% endblock nav %}</nav>
+    <nav>
+      <div class="left-menu">
+        {% block nav %} {% endblock nav %}
+      </div>
+      {% if user.is_authenticated %}
+      <div class="right-menu">
+        <ul>
+          <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+        </ul>
+        <ul>
+          <li><a href="">{{ user|upper }}</a></li>
+        </ul>
+      {% else %}
+      <div class="right-menu"></div>
+        <ul>
+          <li><a href="{% url 'login' %}">LOGIN</a></li>
+        </ul>
+          <ul>
+          <li><a href="{% url 'logout' %}">CREAR USUARIO</a></li>
+        </ul>
+      </div>
+      {% endif %}
+    </nav>
     <main>{% block content %} {% endblock content %}</main>
     </div>
   </body>

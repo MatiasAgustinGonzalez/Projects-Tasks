@@ -1,0 +1,25 @@
+{% extends 'Projects/base.html' %} {% load static %}{% block title %}Projects
+Task - Creación{%endblock %} {%block h1%}
+<h1>Creación de Proyecto</h1>
+{% endblock%} {% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_form_create.css' %} "
+/>
+{% endblock%}{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %} {{ FORM_LOGIN.as_p }}
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -6,19 +6,10 @@ Task - Filtro {% endblock %} {% block h1 %} {% if filtro_tipo %}
   rel="stylesheet"
   href="{% static 'Projects/css/styles_list_cards.css' %}"
 />
-<div class="left-menu">
-  <ul>
-    <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
-  </ul>
-</div>
-<div class="right-menu">
-  <ul>
-    <li><a href="">LOGOUT</a></li>
-  </ul>
-  <ul>
-    <li><a href="">USUARIO</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
+</ul>
+
 {% endblock %} {% block content %}
 <div class="card-container">
   {% for tarjeta in TARJETAS_FILTER %}

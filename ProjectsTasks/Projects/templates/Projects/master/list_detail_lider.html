@@ -6,19 +6,9 @@ Task - Detalle {% endblock %} {% block h1 %}
   rel="stylesheet"
   href="{% static 'Projects/css/styles_list_lider_sponsor.css' %}"
 />
-<div class="left-menu">
-  <ul>
-    <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
-  </ul>
-</div>
-<div class="right-menu">
-  <ul>
-    <li><a href="">LOGOUT</a></li>
-  </ul>
-  <ul>
-    <li><a href="">USUARIO</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
+</ul>
 {% endblock %} {% block content %}
 <section class="py-5">
   <div class="container">
@@ -40,7 +30,11 @@ Task - Detalle {% endblock %} {% block h1 %}
           <th scope="row">{{ forloop.counter }}</th>
           <td>{{ lider.nombre }}</td>
           <td>
-            <a href="{% url 'update_lider' lider.id %}" class="btn btn-primary btn-sm">Editar</a>
+            <a
+              href="{% url 'update_lider' lider.id %}"
+              class="btn btn-primary btn-sm"
+              >Editar</a
+            >
             <a
               href="{% url 'delete_lider' lider.id %}"
               class="btn btn-primary btn-sm btn-danger"

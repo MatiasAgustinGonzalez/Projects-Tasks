@@ -6,22 +6,12 @@ Task - Eliminar {%endblock %} {%block h1%}
   rel="stylesheet"
   href="{% static 'Projects/css/styles_delete_cards.css' %}"
 />
-<div class="left-menu"></div>
-<div class="right-menu">
-  <ul>
-    <li><a href="">LOGOUT</a></li>
-  </ul>
-  <ul>
-    <li><a href="">USUARIO</a></li>
-  </ul>
-</div>
 {% endblock%}{% block content %}
 <div class="confirmation-message">
   <form method="post">
     {% csrf_token %}
     <h1>Eliminación de Sponsor : {{ SPONSOR.nombre}}</h1>
-    <p>
-      ¿Esta seguro que quiere eliminar éste Sponsor?</p>
+    <p>¿Esta seguro que quiere eliminar éste Sponsor?</p>
     <input type="submit" value="Confirmar Borrar" />
     <a href="{% url 'list_sponsor' %}">Cancelar</a>
   </form>
