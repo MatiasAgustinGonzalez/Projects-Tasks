@@ -13,7 +13,7 @@ Dentro de esta aplicación en primera instancia se destaca la APP Projects cuyo 
 
   ### Cómo empezar
 
-  1. **Acceder a la lista de proyectos:** Para comenzar, accede al siguiente enlace: [http://127.0.0.1:8000/Projects/list/]
+  1. **Acceder a la lista de proyectos:** Para comenzar, accede al siguiente enlace: [http://127.0.0.1:8000/Projects/]
   2. **Crear líderes y sponsors:** Antes de crear tus primeras tarjetas de proyectos, asegúrate de crear los líderes y patrocinadores necesarios.
   3. **Crear tarjetas de proyectos:** Una vez que hayas configurado los líderes y patrocinadores, podrás comenzar a crear las tarjetas de proyectos necesarias para tus iniciativas.
   4. **Gestión visual:** Utiliza la funcionalidad de filtrado para visualizar y gestionar tus proyectos de manera eficiente, simplemente haciendo clic en el nombre del líder o del patrocinador.
