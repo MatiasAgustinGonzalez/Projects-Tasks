@@ -1,0 +1,32 @@
+{% extends 'Projects/base.html' %} {% load static %} {% block title %} Projects
+Task - Búsuqeda {% endblock %} {% block h1 %}
+<h1>Búsqueda de Proyectos</h1>
+{% endblock %} {% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_form_create.css' %}"
+/>
+<div class="left-menu">
+</div>
+<div class="right-menu">
+  <ul>
+    <li><a href="">LOGOUT</a></li>
+  </ul>
+  <ul>
+    <li><a href="">USUARIO</a></li>
+  </ul>
+</div>
+{% endblock %} {% block content %}
+<div class="form-container">
+  <div class="container">
+    <div class="card-header">Filtros de búsqueda</div>
+    <div class="card-body">
+      <form method="POST">
+        {% csrf_token %} {{ SEARCH_FORM.as_p }}
+        <button type="submit" class="btn btn-primary">Buscar</button>
+        <a href="{% url 'list_cards' %}">Cancelar</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -14,3 +14,7 @@ class TarjetaCreateForm(forms.ModelForm):
             'fecha_fin': 'Seleccionar el fecha_fin',
             'estado': 'Seleccionar el estado',
         }
+
+class TarjetaSearchForm(forms.Form):
+    titulo = forms.CharField(max_length=20, required=True, label="Ingresar nombre Proyecto")
+    estado = forms.ChoiceField(choices=Tarjeta.Tipo.choices, required=False, label="Seleccionar estado")

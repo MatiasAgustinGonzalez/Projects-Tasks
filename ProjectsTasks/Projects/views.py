@@ -9,6 +9,7 @@ from django.views.generic import (
     DeleteView,
 )
 from .models import Lider, Sponsor, Tarjeta
+from .forms import TarjetaSearchForm
 
 
 def home_view(request):
@@ -98,6 +99,23 @@ class TarjetaDetailView(DetailView):
     model = Tarjeta
     template_name = "Projects/cards/detail_cards.html"
     context_object_name = "TARJETAS"
+
+def tarjeta_search_view(request):
+    if request.method == "GET":
+        form = TarjetaSearchForm()
+        return render(request, "Projects/cards/form_search_cards.html", context={"SEARCH_FORM": form})
+    elif request.method == "POST":
+        form = TarjetaSearchForm(request.POST)
+        if form.is_valid():
+            titulo = form.cleaned_data["titulo"]
+            estado = form.cleaned_data["estado"]
+            tarjetas_encontradas = Tarjeta.objects.filter(titulo__icontains = titulo)
+            if estado:
+                tarjetas_encontradas = tarjetas_encontradas.filter(estado = estado)
+            contexto_dict = {"TARJETAS_LIST": tarjetas_encontradas}
+            return render(request, "Projects/cards/list_cards.html", context=contexto_dict)
+    else:
+        return render(request,"Projects/cards/form_search_cards.html", context = {"SEARCH_FORM": form} )
 
 
 #--------------------------------

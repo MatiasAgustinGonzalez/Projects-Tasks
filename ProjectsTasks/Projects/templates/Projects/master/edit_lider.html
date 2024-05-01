@@ -27,13 +27,11 @@ Task - Editar {% endblock %} {% block h1 %}
   <form method="post">
     {% csrf_token %}
     <div class="container">
-      <div class="row">
-        <div class="card-header">Datos del Lider</div>
-        <div class="card-body">
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <a href="{% url 'list_lider' %}">Cancelar</a>
-        </div>
+      <div class="card-header">Datos del Lider</div>
+      <div class="card-body">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'list_lider' %}">Cancelar</a>
       </div>
     </div>
   </form>

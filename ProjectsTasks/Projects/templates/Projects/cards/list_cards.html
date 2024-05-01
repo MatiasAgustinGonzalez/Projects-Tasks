@@ -15,7 +15,7 @@ Task - Listado{%endblock %} {%block h1%}
     </div>
   </div>
   <div class="dropdown">
-    <button class="dropbtn">ACCION</button>
+    <button class="dropbtn">CREACION</button>
     <div class="dropdown-content">
       <a href="{% url 'create_lider' %}">Crear Lider</a>
       <a href="{% url 'create_sponsor' %}">Crear Sponsor</a>
@@ -25,9 +25,10 @@ Task - Listado{%endblock %} {%block h1%}
   <div class="dropdown">
     <button class="dropbtn">VISUALIZACION</button>
     <div class="dropdown-content">
+      <a href="{% url 'list_cards' %}">Listado Proyectos</a>
       <a href="{% url 'list_lider' %}">Listado Lider</a>
       <a href="{% url 'list_sponsor' %}">Listado Sponsor</a>
-      <a href="">Buscar Proyecto</a>
+      <a href="{% url 'search_cards' %}">Buscar Proyectos</a>
     </div>
   </div>
 </div>

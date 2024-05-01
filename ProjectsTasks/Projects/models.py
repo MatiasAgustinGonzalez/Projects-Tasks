@@ -17,6 +17,7 @@ class Sponsor(models.Model):
 
 class Tarjeta(models.Model):
     class Tipo(models.TextChoices):
+        sin_estado = '', ''
         planificado = 'Planificado', 'Planificado'
         en_curso = 'En Curso', 'En Curso'
         finalizado = 'Finalizado', 'Finalizado'
