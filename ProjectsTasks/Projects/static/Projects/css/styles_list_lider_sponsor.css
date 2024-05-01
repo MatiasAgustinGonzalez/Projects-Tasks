@@ -1,0 +1,97 @@
+* {
+  font-family: sans-serif;
+}
+
+/* Estilos para la tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-weight: 600;
+  text-align: left;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Estilos para los botones de acción */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-success {
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Estilos para el contenedor */
+.container {
+  max-width: 800px;
+  margin: 50px auto; /* Separacion entre el nav y Titulo Lideres*/
+}
+
+/* Estilos para el botón Eliminar */
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545; /* 2) Cambiar el color de fondo a rojo */
+  border-color: #dc3545;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #c82333; /* Color más oscuro al pasar el mouse o al enfocarse */
+  border-color: #bd2130;
+}
+
+/* Estilos para el mensaje de "No hay Líderes" */
+.no-leaders-message {
+  font-style: italic;
+  color: #6c757d;
+}
+
+/* Estilos para el encabezado */
+h2 {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los botones en general */
+.btn {
+  margin-right: 15px;
+}

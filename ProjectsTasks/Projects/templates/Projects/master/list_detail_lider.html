@@ -1,0 +1,60 @@
+{% extends 'Projects/base.html' %} {% load static %} {% block title %}Projects
+Task - Detalle {% endblock %} {% block h1 %}
+<h1>Listado de Lideres</h1>
+{% endblock %} {% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_list_lider_sponsor.css' %}"
+/>
+<div class="left-menu">
+  <ul>
+    <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
+  </ul>
+</div>
+<div class="right-menu">
+  <ul>
+    <li><a href="">LOGOUT</a></li>
+  </ul>
+  <ul>
+    <li><a href="">USUARIO</a></li>
+  </ul>
+</div>
+{% endblock %} {% block content %}
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="mb-0">Líderes</h2>
+      <a href="{% url 'create_lider' %}" class="btn btn-success">Crear Líder</a>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if LIST_DETAIL_LIDER %} {% for lider in LIST_DETAIL_LIDER %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ lider.nombre }}</td>
+          <td>
+            <a href="{% url 'update_lider' lider.id %}" class="btn btn-primary btn-sm">Editar</a>
+            <a
+              href="{% url 'delete_lider' lider.id %}"
+              class="btn btn-primary btn-sm btn-danger"
+              >Eliminar</a
+            >
+          </td>
+        </tr>
+        {% endfor %} {% else %}
+        <tr>
+          <td colspan="3">No hay Líderes.</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

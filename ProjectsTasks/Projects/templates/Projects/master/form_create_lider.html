@@ -1,16 +1,17 @@
 {% extends 'Projects/base.html' %} {% load static %}{% block title %}Projects
 Task - Creación{%endblock %} {%block h1%}
-<h1>Creación de Sponsor</h1>
+<h1>Creación de Lider</h1>
 {% endblock%} {% block nav %}
 <link
   rel="stylesheet"
   href="{% static 'Projects/css/styles_form_create.css' %} "
 />
-<div class="left-menu"></div>
-<div class="right-menu">
+<div class="left-menu">
   <ul>
-    <li><a href="{% url 'list_cards' %}">REGRESAR</a></li>
+    <li><a href="{% url 'list_lider' %}">REGRESAR</a></li>
   </ul>
+</div>
+<div class="right-menu">
   <ul>
     <li><a href="">USUARIO</a></li>
   </ul>

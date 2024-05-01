@@ -1,0 +1,42 @@
+{% extends 'Projects/base.html' %} {% load static %} {% block title %} Projects
+Task - Editar {% endblock %} {% block h1 %}
+<h1>Editar Proyecto: {{ TARJETAS.titulo }}</h1>
+{% endblock %} {% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_form_create.css' %}"
+/>
+<div class="left-menu">
+  <div class="dropdown">
+    <button class="dropbtn">ACCION</button>
+    <div class="dropdown-content">
+      <a href="">Eliminar Tarjeta</a>
+      <a href="{% url 'list_cards' %}">Regresar</a>
+    </div>
+  </div>
+</div>
+<div class="right-menu">
+  <ul>
+    <li><a href="">LOGOUT</a></li>
+  </ul>
+  <ul>
+    <li><a href="">USUARIO</a></li>
+  </ul>
+</div>
+{% endblock %} {% block content %}
+<div class="form-container">
+  <form method="post">
+    {% csrf_token %}
+    <div class="container">
+      <div class="row">
+        <div class="card-header">Datos de la Tarjeta</div>
+        <div class="card-body">
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <a href="{% url 'detail_cards' TARJETAS.id %}">Cancelar</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

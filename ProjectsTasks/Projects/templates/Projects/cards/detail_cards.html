@@ -1,13 +1,17 @@
-{% extends 'Projects/base.html' %} {% load static %} {% block title %}Projects
-Task - Detalle{%endblock %} {%block h1%}
-<h1>Detalle de Tarjeta</h1>
-{% endblock%} {% block nav %}
-
+{% extends 'Projects/base.html' %} {% load static %} {% block title %} Projects
+Task - Detalle {% endblock %} {% block h1 %}
+<h1>{{ TARJETAS.titulo }}</h1>
+{% endblock %} {% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_detail_cards.css' %}"
+/>
 <div class="left-menu">
   <div class="dropdown">
     <button class="dropbtn">ACCION</button>
     <div class="dropdown-content">
       <a href="{% url 'delete_cards' TARJETAS.pk %}">Eliminar Tarjeta</a>
+      <a href="{% url 'update_cards' TARJETAS.pk %}">Editar Tarjeta</a>
       <a href="{% url 'list_cards' %}">Regresar</a>
     </div>
   </div>
@@ -20,15 +24,20 @@ Task - Detalle{%endblock %} {%block h1%}
     <li><a href="">USUARIO</a></li>
   </ul>
 </div>
-{% endblock%} {% block content %}
+{% endblock %} {% block content %}
 <div class="card-detail-container">
-  <h2>{{ TARJETAS.titulo }}</h2>
-  <p>{{ TARJETAS.descripcion }}</p>
-  <p>Sponsor: {{ TARJETAS.sponsor }}</p>
-  <p>Fecha Inicio Proyecto: {{ TARJETAS.fecha_inicio | date:"Y-m-d" }}</p>
-  <p>Fecha Fin Proyecto: {{ TARJETAS.fecha_fin | date:"Y-m-d" }}</p>
-  <h3>Estado: {{ TARJETAS.estado }}</h3>
-  <h3>Plazo: {{ TARJETAS.diferencia_año }} meses</h3>
-  <!-- Aquí puedes agregar más información sobre el proyecto -->
+  <div class="description-container">
+    <h3>{{ TARJETAS.descripcion }}</h3>
+  </div>
+  <div class="sponsor-lider-container">
+    <h3>Sponsor: {{ TARJETAS.sponsor }}</h3>
+    <h3>Lider: {{ TARJETAS.lider }}</h3>
+  </div>
+  <div class="details-container">
+    <p>Fecha Inicio Proyecto: {{ TARJETAS.fecha_inicio | date:"Y-m-d" }}</p>
+    <p>Fecha Fin Proyecto: {{ TARJETAS.fecha_fin | date:"Y-m-d" }}</p>
+    <h3>Estado: {{ TARJETAS.estado }}</h3>
+    <h3>Plazo: {{ TARJETAS.diferencia_año }} meses</h3>
+  </div>
 </div>
 {% endblock %}

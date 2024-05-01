@@ -1,6 +1,6 @@
 {% extends 'Projects/base.html' %} {% load static %} {% block title %}Projects
-Task - Eliminar{%endblock %} {%block h1%}
-<h1>{{ TARJETAS.titulo }}</h1>
+Task - Eliminar {%endblock %} {%block h1%}
+<h1>Eliminación Sponsor</h1>
 {% endblock%} {% block nav %}
 <link
   rel="stylesheet"
@@ -19,12 +19,11 @@ Task - Eliminar{%endblock %} {%block h1%}
 <div class="confirmation-message">
   <form method="post">
     {% csrf_token %}
-    <h1>Eliminación de Tarjeta</h1>
+    <h1>Eliminación de Sponsor : {{ SPONSOR.nombre}}</h1>
     <p>
-      ¿Esta seguro que quiere eliminar ésta tarjeta "{{ TARJETAS.titulo }}"?
-    </p>
+      ¿Esta seguro que quiere eliminar éste Sponsor?</p>
     <input type="submit" value="Confirmar Borrar" />
-    <a href="{% url 'detail_cards' TARJETAS.id %}">Cancelar</a>
+    <a href="{% url 'list_sponsor' %}">Cancelar</a>
   </form>
 </div>
 {% endblock %}

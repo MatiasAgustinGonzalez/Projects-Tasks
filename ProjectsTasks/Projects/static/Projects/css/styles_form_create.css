@@ -4,10 +4,10 @@
 
 /* Estilos para el contenedor del formulario */
 .form-container {
-  margin: 50px auto;
-  max-width: 500px;
-  padding: 20px;
-  background-color: #f9f9f981;
+  margin: 20px auto;
+  max-width: 500px; /* Aumenta el ancho máximo */
+  padding: 30px; /* Aumenta el espacio interno */
+  background-color: #fcfafa; /* Cambia el color de fondo */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -18,37 +18,53 @@ form {
   flex-direction: column;
 }
 
+.card-header{
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 /* Estilos para los campos del formulario */
 form input[type="text"],
 form textarea,
 form select {
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid #ccccccb4;
+  border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s; /* Transición suave del color del borde */
+  width: 100%; /* Ajusta el ancho al 100% */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
 
 /* Estilos para los campos del formulario al pasar el mouse */
 form input[type="text"]:hover,
 form textarea:hover,
 form select:hover {
-  border-color: #007bff; /* Cambia el color del borde al pasar el mouse */
+  border-color: #3e76ca; /* Cambia el color del borde al pasar el mouse */
 }
 
-/* Estilos para el botón de guardar */
-form button[type="submit"] {
+/* Estilos para el botón de guardar y el enlace de cancelar */
+form button[type="submit"],
+.card-body a {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #366597;
   color: #fff;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s; /* Transición suave del color de fondo */
+  text-decoration: none;
+  width: 100%; /* Ajusta el ancho al 100% */
+  display: inline-block; /* Alinea en línea */
+  text-align: center; /* Alinea el texto al centro */
 }
 
 /* Estilos para el botón de guardar al pasar el mouse */
-form button[type="submit"]:hover {
+form button[type="submit"]:hover,
+.card-body a:hover {
   background-color: #0056b3;
 }
+

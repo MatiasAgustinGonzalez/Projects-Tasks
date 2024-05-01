@@ -1,70 +1,51 @@
-/* Estilos para la tarjeta */
+* {
+  font-family: sans-serif;
+}
 .card-detail-container {
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.card-detail-container h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.card-detail-container p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.card-detail-container ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.card-detail-container ul li {
-  margin-bottom: 5px;
-}
-
-.card-detail-container a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.card-detail-container a:hover {
-  text-decoration: underline;
-}
-
-.card-detail-container button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.card-detail-container button:hover {
-  background-color: #0056b3;
-}
-
-.left-menu,
-.right-menu {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.description-container {
+  flex: 1 1 calc(20% - 10px); /* Tamaño del contenedor con margen */
   margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #9bbec5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.left-menu .dropdown,
-.right-menu ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
+.sponsor-lider-container {
+  flex: 1 1 calc(5% - 10px); /* Tamaño del contenedor con margen */
+  margin-bottom: 20px;
+  margin-left: 20px; /* Agregamos un margen a la izquierda */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #9bbec5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.left-menu .dropdown-content,
-.right-menu ul li {
-  margin-left: 10px;
+.details-container {
+  flex: 1 1 100%; /* Ocupará toda la línea debajo */
+  margin-top: 20px; /* Espaciado superior */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #9bbec5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .card-detail-container {
+    flex-direction: column;
+  }
+
+  .sponsor-lider-container {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }

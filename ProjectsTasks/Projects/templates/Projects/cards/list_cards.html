@@ -25,10 +25,9 @@ Task - Listado{%endblock %} {%block h1%}
   <div class="dropdown">
     <button class="dropbtn">VISUALIZACION</button>
     <div class="dropdown-content">
-      <a href="">Listado Lider</a>
-      <a href="">Listado Sponsor</a>
-      <a href="">Buscar Sponsor</a>
-      <a href="">Buscar Lider</a>
+      <a href="{% url 'list_lider' %}">Listado Lider</a>
+      <a href="{% url 'list_sponsor' %}">Listado Sponsor</a>
+      <a href="">Buscar Proyecto</a>
     </div>
   </div>
 </div>

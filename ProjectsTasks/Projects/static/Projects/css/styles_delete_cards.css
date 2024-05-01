@@ -1,0 +1,55 @@
+* {
+  font-family: sans-serif;
+}
+
+/* Estilos para el mensaje de confirmación */
+.confirmation-message {
+  max-width: 45%; /* Ajusta el ancho de la tarjeta en funcion del h1*/
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-message h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.confirmation-message p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.confirmation-message form {
+  text-align: center;
+}
+
+.confirmation-message input[type="submit"],
+.confirmation-message a {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.confirmation-message input[type="submit"] {
+  background-color: #dc3545;
+}
+
+.confirmation-message a {
+  background-color: #366597;
+}
+
+.confirmation-message input[type="submit"]:hover {
+  background-color: #a51524;
+}
+
+.confirmation-message a:hover {
+  background-color: #124275;
+}
