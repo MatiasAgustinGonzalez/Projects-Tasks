@@ -9,12 +9,11 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from .models import Lider, Sponsor, Tarjeta
-from .forms import TarjetaSearchForm
+from .models import Lider, Sponsor, Tarjeta, Avatar
+from .forms import TarjetaSearchForm, UserEditForm, AvatarCreateForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
-from .forms import UserEditForm
 
 
 
@@ -235,3 +234,25 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self):
         return self.request.user
+
+
+#--------------------------------
+#              Avatar
+#--------------------------------
+def avatar_view(request):
+    if request.method == "GET":
+        contexto = {"IMG_AVATAR": AvatarCreateForm()}
+    else:
+        form = AvatarCreateForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.cleaned_data["image"]
+            avatar_existente = Avatar.objects.filter(user=request.user)
+            avatar_existente.delete()
+            nuevo_avatar = Avatar(image=image, user=request.user)
+            nuevo_avatar.save()
+            return redirect("home")
+        else:
+            contexto = {"IMG_AVATAR": form}
+
+
+    return render(request, "Projects/profile/form_create_avatar.html", context=contexto)

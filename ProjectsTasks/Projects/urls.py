@@ -21,6 +21,7 @@ from .views import(
     UserUpdateView,
     user_login_view,
     user_logout_view,
+    avatar_view,
 )
 
 urlpatterns = [
@@ -45,4 +46,5 @@ urlpatterns = [
     path('user-edit/', UserUpdateView.as_view(), name='edit_user'),
     path("login/", user_login_view, name="login"),
     path("logout/", user_logout_view, name="logout"),
+    path('avatar/add/', avatar_view, name='avatar_add'),
 ]

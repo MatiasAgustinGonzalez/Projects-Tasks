@@ -23,6 +23,14 @@
         <ul>
           <li><a href="{% url 'edit_user' %}">{{ user|upper }}</a></li>
         </ul>
+        <ul>
+          {% if user.avatar.image %}
+          <li><img src="{{ user.avatar.image.url }}" alt="Avatar" style="height: 18px; width: 18px; border-radius: 50%;"></li>
+          {% endif %}
+        </ul>
+        <ul>
+          <li><a href="{% url 'avatar_add' %}">IMG</a></li>
+        </ul>
       {% else %}
       <div class="right-menu">
         <ul>
