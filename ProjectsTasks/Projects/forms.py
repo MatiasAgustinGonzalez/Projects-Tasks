@@ -1,5 +1,6 @@
 from django import forms
 from .models import Tarjeta
+from django.contrib.auth.models import User
 
 class TarjetaCreateForm(forms.ModelForm):
     class Meta:
@@ -18,3 +19,9 @@ class TarjetaCreateForm(forms.ModelForm):
 class TarjetaSearchForm(forms.Form):
     titulo = forms.CharField(max_length=20, required=True, label="Ingresar nombre Proyecto")
     estado = forms.ChoiceField(choices=Tarjeta.Tipo.choices, required=False, label="Seleccionar estado")
+
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email']

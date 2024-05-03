@@ -1,0 +1,19 @@
+{% extends 'Projects/base.html' %} {% load static %}{% block title %}Projects
+Task - User{%endblock %} {%block h1%}
+<h1>Modificación Usuario</h1>
+{% endblock%} {% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_form_create.css' %} "
+/>
+{% endblock%}{% block content %}
+<div class="form-container">
+  <form method="POST" action="{% url 'edit_user' %}">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Actualizar Perfil</button>
+    <div class="card-body" >
+      <a href="{% url 'home' %}">Cancelar</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

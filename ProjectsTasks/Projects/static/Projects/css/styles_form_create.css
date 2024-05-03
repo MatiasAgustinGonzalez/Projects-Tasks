@@ -5,8 +5,9 @@
 /* Estilos para el contenedor del formulario */
 .form-container {
   margin: 20px auto;
-  max-width: 500px; /* Aumenta el ancho máximo */
-  padding: 30px; /* Aumenta el espacio interno */
+  max-width: 400px; /* Aumenta el ancho máximo */
+  max-height: auto;
+  padding: 40px; /* Aumenta el espacio interno */
   background-color: #fcfafa; /* Cambia el color de fondo */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -26,6 +27,8 @@ form {
 
 /* Estilos para los campos del formulario */
 form input[type="text"],
+form input[type="password"],
+form input[type="Email"],
 form textarea,
 form select {
   margin-bottom: 20px;
@@ -39,6 +42,8 @@ form select {
 
 /* Estilos para los campos del formulario al pasar el mouse */
 form input[type="text"]:hover,
+form input[type="password"]:hover,
+form input[type="Email"]:hover,
 form textarea:hover,
 form select:hover {
   border-color: #3e76ca; /* Cambia el color del borde al pasar el mouse */

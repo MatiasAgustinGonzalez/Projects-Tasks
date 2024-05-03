@@ -21,15 +21,15 @@
           <li><a href="{% url 'logout' %}">LOGOUT</a></li>
         </ul>
         <ul>
-          <li><a href="">{{ user|upper }}</a></li>
+          <li><a href="{% url 'edit_user' %}">{{ user|upper }}</a></li>
         </ul>
       {% else %}
-      <div class="right-menu"></div>
+      <div class="right-menu">
         <ul>
           <li><a href="{% url 'login' %}">LOGIN</a></li>
         </ul>
-          <ul>
-          <li><a href="{% url 'logout' %}">CREAR USUARIO</a></li>
+        <ul>
+          <li><a href="{% url 'create_user' %}">CREAR USUARIO</a></li>
         </ul>
       </div>
       {% endif %}

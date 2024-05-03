@@ -17,6 +17,8 @@ from .views import(
     TarjetaDeleteView,
     LiderDeleteView,
     SponsorDeleteView,
+    user_creation_view,
+    UserUpdateView,
     user_login_view,
     user_logout_view,
 )
@@ -39,6 +41,8 @@ urlpatterns = [
     path("cards-delete/<int:pk>/", TarjetaDeleteView.as_view(), name="delete_cards"),
     path("lider-delete/<int:pk>/", LiderDeleteView.as_view(), name="delete_lider"),
     path("sponsor-delete/<int:pk>/", SponsorDeleteView.as_view(), name="delete_sponsor"),
+    path("user-create/", user_creation_view, name="create_user"),
+    path('user-edit/', UserUpdateView.as_view(), name='edit_user'),
     path("login/", user_login_view, name="login"),
     path("logout/", user_logout_view, name="logout"),
 ]

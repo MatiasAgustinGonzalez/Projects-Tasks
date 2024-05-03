@@ -1,6 +1,6 @@
 {% extends 'Projects/base.html' %} {% load static %}{% block title %}Projects
 Task - Ingreso{%endblock %} {%block h1%}
-<h1>Bienvenido a Projects</h1>
+<h1>Creación de Usuario</h1>
 {% endblock%} {% block nav %}
 <link
   rel="stylesheet"
@@ -8,9 +8,9 @@ Task - Ingreso{%endblock %} {%block h1%}
 />
 {% endblock%}{% block content %}
 <div class="form-container">
-  <form method="POST" action="{% url 'login' %}">
-    {% csrf_token %} {{ FORM_LOGIN.as_p }}
-    <button type="submit">Login</button>
+  <form method="POST" action="{% url 'create_user' %}">
+    {% csrf_token %} {{ FORM_USER.as_p }}
+    <button type="submit">Crear Usuario</button>
   </form>
 </div>
 {% endblock %}

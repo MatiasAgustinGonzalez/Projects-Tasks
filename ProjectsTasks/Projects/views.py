@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from  django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
     DetailView,
@@ -11,9 +12,13 @@ from django.views.generic import (
 from .models import Lider, Sponsor, Tarjeta
 from .forms import TarjetaSearchForm
 from django.contrib.auth import login, logout
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.models import User
+from .forms import UserEditForm
 
 
+
+@login_required
 def home_view(request):
     return render(request, "Projects/home.html")
 
@@ -25,12 +30,12 @@ def home_view(request):
 #   LISTAR todos los registros
 #--------------------------------
 
-class TarjetaListView(ListView):
+class TarjetaListView(LoginRequiredMixin, ListView):
     model = Tarjeta
     template_name = "Projects/cards/list_cards.html"
     context_object_name = "TARJETAS_LIST"
 
-class FilterBySponsorListView(ListView):
+class FilterBySponsorListView(LoginRequiredMixin, ListView):
     model = Tarjeta
     template_name = "Projects/cards/filter_cards.html"
     context_object_name = "TARJETAS_FILTER"
@@ -45,7 +50,7 @@ class FilterBySponsorListView(ListView):
         context['filtro_tipo'] = f'Sponsor ({sponsor_name})'
         return context
 
-class FilterByLiderListView(ListView):
+class FilterByLiderListView(LoginRequiredMixin, ListView):
     model = Tarjeta
     template_name = "Projects/cards/filter_cards.html"
     context_object_name = "TARJETAS_FILTER"
@@ -60,12 +65,12 @@ class FilterByLiderListView(ListView):
         context['filtro_tipo'] = f'Líder ({lider_name})'
         return context
 
-class LiderListView(ListView):
+class LiderListView(LoginRequiredMixin, ListView):
     model = Lider
     template_name = "Projects/master/list_detail_lider.html"
     context_object_name = "LIST_DETAIL_LIDER"
 
-class SponsorListView(ListView):
+class SponsorListView(LoginRequiredMixin, ListView):
     model = Sponsor
     template_name = "Projects/master/list_detail_sponsor.html"
     context_object_name = "LIST_DETAIL_SPONSOR"
@@ -74,19 +79,19 @@ class SponsorListView(ListView):
 #   CREAR todos los registros
 #--------------------------------
 
-class TarjetaCreateView(CreateView):
+class TarjetaCreateView(LoginRequiredMixin, CreateView):
     model = Tarjeta
     template_name = "Projects/cards/form_create_cards.html"
     fields = ['lider', 'sponsor', 'titulo', 'descripcion', 'fecha_inicio', 'fecha_fin','estado']
     success_url = reverse_lazy("list_cards")
 
-class LiderCreateView(CreateView):
+class LiderCreateView(LoginRequiredMixin, CreateView):
     model = Lider
     template_name = "Projects/master/form_create_lider.html"
     fields = ['nombre']
     success_url = reverse_lazy("list_lider")
 
-class SponsorCreateView(CreateView):
+class SponsorCreateView(LoginRequiredMixin, CreateView):
     model = Sponsor
     template_name = "Projects/master/form_create_sponsor.html"
     fields = ['nombre']
@@ -97,11 +102,12 @@ class SponsorCreateView(CreateView):
 #   LEER todos los registros
 #--------------------------------
 
-class TarjetaDetailView(DetailView):
+class TarjetaDetailView(LoginRequiredMixin, DetailView):
     model = Tarjeta
     template_name = "Projects/cards/detail_cards.html"
     context_object_name = "TARJETAS"
 
+@login_required
 def tarjeta_search_view(request):
     if request.method == "GET":
         form = TarjetaSearchForm()
@@ -124,21 +130,21 @@ def tarjeta_search_view(request):
 # ACTUALIZAR todos los registros
 #--------------------------------
 
-class TarjetaUpdateView(UpdateView):
+class TarjetaUpdateView(LoginRequiredMixin, UpdateView):
     model = Tarjeta
     template_name = "Projects/cards/edit_cards.html"
     context_object_name = "TARJETAS"
     fields = ["lider", "sponsor", "titulo", "descripcion", "fecha_inicio", "fecha_fin", "estado"]
     success_url = reverse_lazy("list_cards")
 
-class LiderUpdateView(UpdateView):
+class LiderUpdateView(LoginRequiredMixin, UpdateView):
     model = Lider
     template_name = "Projects/master/edit_lider.html"
     context_object_name = "LIDER"
     fields = ["nombre"]
     success_url = reverse_lazy("list_lider")
 
-class SponsorUpdateView(UpdateView):
+class SponsorUpdateView(LoginRequiredMixin, UpdateView):
     model = Sponsor
     template_name = "Projects/master/edit_sponsor.html"
     context_object_name = "SPONSOR"
@@ -150,19 +156,19 @@ class SponsorUpdateView(UpdateView):
 #   BORRAR todos los registros
 #--------------------------------
 
-class TarjetaDeleteView(DeleteView):
+class TarjetaDeleteView(LoginRequiredMixin, DeleteView):
     model = Tarjeta
     template_name = "Projects/cards/form_delete_cards.html"
     context_object_name = "TARJETAS"
     success_url = reverse_lazy("list_cards")
 
-class LiderDeleteView(DeleteView):
+class LiderDeleteView(LoginRequiredMixin, DeleteView):
     model = Lider
     template_name = "Projects/master/form_delete_lider.html"
     context_object_name = "LIDER"
     success_url = reverse_lazy("list_lider")
 
-class SponsorDeleteView(DeleteView):
+class SponsorDeleteView(LoginRequiredMixin, DeleteView):
     model = Sponsor
     template_name = "Projects/master/form_delete_sponsor.html"
     context_object_name = "SPONSOR"
@@ -170,7 +176,7 @@ class SponsorDeleteView(DeleteView):
 
 
 # -----------------------------------------------------------------------------
-# --------------------------   LOGIN LOGOUT   ---------------------------------
+# ----------------------------   PERFILES   -----------------------------------
 # -----------------------------------------------------------------------------
 
 #--------------------------------
@@ -199,3 +205,33 @@ def user_login_view(request):
 def user_logout_view(request):
     logout(request)
     return redirect("login")
+
+
+#--------------------------------
+#          Crear Usuario
+#--------------------------------
+
+def user_creation_view(request):
+    if request.method == "GET":
+        form = UserCreationForm()
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+
+    return render(request, "Projects/profile/form_create_user.html", {"FORM_USER": form})
+
+
+#--------------------------------
+#          Editar Usuario
+#--------------------------------
+class UserUpdateView(LoginRequiredMixin, UpdateView):
+    model = User
+    form_class = UserEditForm
+    template_name = 'Projects/profile/form_edit_user.html'
+    success_url = reverse_lazy('home')
+
+    def get_object(self):
+        return self.request.user
