@@ -19,3 +19,5 @@ Dentro de esta aplicación en primera instancia se destaca la APP Projects cuyo 
   4. **Gestión visual:** Utiliza la funcionalidad de filtrado para visualizar y gestionar tus proyectos de manera eficiente, simplemente haciendo clic en el nombre del líder o del patrocinador.
 
 ¡Explora las funcionalidades de Projects Tasks y lleva la gestión de tus proyectos al siguiente nivel!
+
+Link Video Explicativo: https://youtu.be/zWxuad_KFpI
