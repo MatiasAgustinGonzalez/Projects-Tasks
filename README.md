@@ -1,4 +1,4 @@
-# Proyecto Tasks
+# Projects Tasks
 
 ¡Bienvenido a Projects Tasks! Esta aplicación, desarrollada en Python con el framework Django, tiene como objetivo proporcionar una herramienta de gestión de proyectos dirigida a mandos medios de empresas. Facilita el seguimiento y la organización de la información de todos los proyectos que se desarrollan bajo su gerencia.
 
