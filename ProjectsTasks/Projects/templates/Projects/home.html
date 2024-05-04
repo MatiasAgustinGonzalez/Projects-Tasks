@@ -1,7 +1,16 @@
-{% extends 'Projects/base.html' %}{% block title %}Projects Tasks{% endblock %}
-{% block h1%}
-<h1>Bienvenido a Proyects Tasks</h1>
-{% endblock%} {% block nav %}
+{% extends 'Projects/base.html' %}
+{% load static %}
+{% block title %}Projects Tasks{% endblock %}
+
+{% block h1 %}
+<h1>Bienvenido a Projects Tasks</h1>
+{% endblock %}
+
+{% block nav %}
+<link
+  rel="stylesheet"
+  href="{% static 'Projects/css/styles_home.css' %} "
+/>
 <div class="dropdown">
   <button class="dropbtn">APP's</button>
   <div class="dropdown-content">
@@ -9,6 +18,32 @@
     <a href="/admin/">Administrador</a>
   </div>
 </div>
-{% endblock%} {% block content %}
-<h3>Bienvenidos a la web de Reservas!</h3>
-{% endblock content %}
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h2>¡Bienvenido a Projects Tasks!</h2>
+  <p>Esta aplicación, desarrollada en Python con el framework Django, tiene como objetivo proporcionar una herramienta de gestión de proyectos dirigida a mandos medios de empresas. Facilita el seguimiento y la organización de la información de todos los proyectos que se desarrollan bajo su gerencia.</p>
+  
+  <h3>Características principales</h3>
+  <ul>
+    <li>Tarjetas de proyectos: Cada proyecto se representa mediante una tarjeta que contiene información clave, como el líder técnico y el patrocinador, el título del proyecto, una descripción y su estado.</li>
+    <li>Gestión visual: La aplicación ofrece una interfaz intuitiva para gestionar y visualizar los proyectos. Puedes filtrarlos por líder o patrocinador con solo hacer clic en sus nombres.</li>
+  </ul>
+</div>
+
+<div class="about-creator">
+  <h2>About Creator</h2>
+  <div class="creator-card">
+    <img src="{% static 'Projects/pictures/Foto Perfil.jpg' %}" alt="Matias Gonzalez" style="height: 140px; width: 140px; border-radius: 50%;">
+    <h3>Desarrollo y Programación : Matias Gonzalez</h3>
+  </div>
+  <div class="creator-card">
+    <h3>Acerca de Mi...</h3><br>
+    <p>¡Hola! Soy Matias!, un apasionado de la tecnologia. Durante los últimos 8 años, he tenido el privilegio de trabajar en Colca Cola, donde me desempeño en el área de Producción. Mi rol principal implica liderar el desarrollo de automatizaciones y sistemas de reporte que facilitan la toma de decisiones estratégicas en la empresa.<br>
+    Además de mi dedicación al mundo laboral, tengo un gran interés en el deporte. Soy un apasiodado del padel y el basquet. <br>
+    Una de mis mayores pasiones es el aprendizaje. Siempre estoy buscando oportunidades para expandir mis horizontes y adquirir nuevos conocimientos. Ya sea estudiando un nuevo lenguaje de programación o sumergiéndome en temas más especializados, disfruto cada oportunidad de crecimiento intelectual.
+    En resumen, me considero una persona comprometida, curiosa y siempre dispuesta a enfrentar nuevos desafíos. Creo firmemente en la importancia de la mejora continua.</p>
+  </div>
+</div>
+{% endblock %}
